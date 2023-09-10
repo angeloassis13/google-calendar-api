@@ -10,10 +10,12 @@ The basic use case is that every appointment is saved at Google Calendar.
 The API has a configuration with the price since a specific date.
 
 For example, considering the following configuration:
-2023-01-01: 10
-2023-01-05: 20
+
+- 2023-01-01: 10
+- 2023-01-05: 20
 
 Each appointment in the interval from 2023-01-01 to 2023-01-04 will cost 10.
+
 From 2023-01-05, each appointment will cost 20.
 
 ## Prerequisites
