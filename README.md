@@ -29,6 +29,13 @@ Before you begin, ensure you have the following tools and software installed:
 - Apache Maven
 - Your favorite Integrated Development Environment (IDE), such as Eclipse or IntelliJ IDEA **with lombok plugin installed**
 
+### Google credentials
+
+Since the API needs to call Google Calendar API, a google credential is needed.
+The system expect a file called `credentials.json` in `resources` folder.
+
+This file can be obtained at [Google for Developers](https://developers.google.com/)
+
 ## Getting Started
 
 Follow these steps to get the Spring Boot application up and running:
@@ -40,13 +47,6 @@ Follow these steps to get the Spring Boot application up and running:
 ```bash
 mvn clean install
 ```
-
-### Google credentials
-
-Since the API needs to call Google Calendar API, a google credential is needed.
-The system expect a file called `credential.json` in `resources` folder.
-
-This file can be obtained at [Google for Developers](https://developers.google.com/)
 
 ### Running the application
 
