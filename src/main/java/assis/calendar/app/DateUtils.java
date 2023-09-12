@@ -6,6 +6,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import com.google.api.client.util.DateTime;
 
@@ -17,8 +18,8 @@ public class DateUtils {
 
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-	public static DateTime localDateTimeToDateTime(LocalDateTime value) {
-		return new DateTime(value.atZone(ZoneId.systemDefault()).toEpochSecond() * 1000);
+	public static DateTime localDateToDateTime(LocalDate value) {
+		return new DateTime(Date.from(value.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 	}
 
 	public static LocalDateTime googleDateTimeToLocalDateTime(DateTime value) {

@@ -1,7 +1,7 @@
 package assis.calendar.app.service;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +20,7 @@ public class CalculationService {
 	@Autowired
 	private ValuesConfigService valuesConfigService;
 
-	public CalcDto calculate(LocalDateTime startDate, LocalDateTime endDate) throws IOException {
+	public CalcDto calculate(LocalDate startDate, LocalDate endDate) throws IOException {
 
 		if (endDate == null) {
 			endDate = startDate.plusMonths(1L);
@@ -28,8 +28,7 @@ public class CalculationService {
 
 		List<EventBasicInfo> events = googleIntegrationService.getEvents(startDate, endDate);
 
-		Map<String, Double> configValuesMap = valuesConfigService.getValuesMap(startDate.toLocalDate(),
-				endDate.toLocalDate());
+		Map<String, Double> configValuesMap = valuesConfigService.getValuesMap(startDate, endDate);
 
 		Double totalValue = 0.0;
 		for (EventBasicInfo event : events) {

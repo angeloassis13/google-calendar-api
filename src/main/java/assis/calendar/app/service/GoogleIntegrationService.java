@@ -1,7 +1,7 @@
 package assis.calendar.app.service;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,14 +30,14 @@ public class GoogleIntegrationService {
 	@Autowired
 	private Calendar calendarService;
 
-	public List<EventBasicInfo> getEvents(LocalDateTime startDate, LocalDateTime endDate) throws IOException {
+	public List<EventBasicInfo> getEvents(LocalDate startDate, LocalDate endDate) throws IOException {
 
 		if (endDate == null) {
 			endDate = startDate.plusMonths(1L);
 		}
 
-		DateTime timeMin = DateUtils.localDateTimeToDateTime(startDate);
-		DateTime timeMax = DateUtils.localDateTimeToDateTime(endDate);
+		DateTime timeMin = DateUtils.localDateToDateTime(startDate);
+		DateTime timeMax = DateUtils.localDateToDateTime(endDate);
 
 		Events events = calendarService.events()
 				.list(DEFAULT_CALENDAR_ID)

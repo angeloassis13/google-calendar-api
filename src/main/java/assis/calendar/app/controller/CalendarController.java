@@ -1,7 +1,7 @@
 package assis.calendar.app.controller;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +23,9 @@ public class CalendarController {
 	private GoogleIntegrationService googleService;
 
 	@GetMapping("/events")
-	public List<EventBasicInfo> events(@RequestParam(required = false, defaultValue = "#{T(java.time.LocalDateTime).now()}") LocalDateTime startDate,
-			@RequestParam(required = false) LocalDateTime endDate)
-			throws IOException {
+	public List<EventBasicInfo> events(
+			@RequestParam(required = false, defaultValue = "#{T(java.time.LocalDate).now()}") LocalDate startDate,
+			@RequestParam(required = false) LocalDate endDate) throws IOException {
 		return googleService.getEvents(startDate, endDate);
 	}
 
