@@ -57,3 +57,11 @@ Once the application is running, open a web browser and navigate to http://local
 ## Frontend
 
 A React application was built for this API. It's available at [Calendar App](https://github.com/angeloassis13/calendar-app)
+
+## Next steps
+
+This API is already functional and usefull, but it would be better with some improvements, like:
+
+- Add unit tests
+- Improve exception handling
+- Add configuration based on environment variables
