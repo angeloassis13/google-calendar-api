@@ -2,7 +2,7 @@
 
 ## Overview
 
-This README provides an overview of a basic API designed for a make up artist.
+This README provides an overview of a basic API designed for a make up artist to calculate invoicing.
 
 It serves as a guide to understand the project structure, how to set up the development environment, run the application, and customize it to suit your needs.
 
@@ -11,12 +11,15 @@ The API has a configuration with the price since a specific date.
 
 For example, considering the following configuration:
 
-- 2023-01-01: 10
-- 2023-01-05: 20
+- 2023-01-01: 100
+- 2023-02-01: 120
+- 2023-02-15: 150
 
-Each appointment in the interval from 2023-01-01 to 2023-01-04 will cost 10.
+Each appointment in the interval from 2023-01-01 to 2023-02-01 will cost 100.
 
-From 2023-01-05, each appointment will cost 20.
+From 2023-02-01 to 2023-02-15, each appointment will cost 120.
+
+Finally, from 2023-02-15, each appointment will cost 150.
 
 ## Prerequisites
 
@@ -50,3 +53,7 @@ This file can be obtained at [Google for Developers](https://developers.google.c
 Run the application by executing the main class SpringBootBasicApplication. You can typically do this by right-clicking the class and selecting "Run" in your IDE.
 
 Once the application is running, open a web browser and navigate to http://localhost:9000/swagger-ui/index.html. You should see a page with all endpoints available.
+
+## Frontend
+
+A React application was built for this API. It's available at [Calendar App](https://github.com/angeloassis13/calendar-app)
